@@ -1,0 +1,12 @@
+,Abnormal cellular phenotype,Abnormality of blood and blood-forming tissues,Abnormality of connective tissue,Abnormality of head or neck,Abnormality of limbs,Abnormality of metabolism/homeostasis,Abnormality of prenatal development or birth,Abnormality of the breast,Abnormality of the cardiovascular system,Abnormality of the digestive system,Abnormality of the ear,Abnormality of the endocrine system,Abnormality of the eye,Abnormality of the genitourinary system,Abnormality of the immune system,Abnormality of the integument,Abnormality of the musculature,Abnormality of the nervous system,Abnormality of the respiratory system,Abnormality of the skeletal system,Abnormality of the thoracic cavity,Abnormality of the voice,Constitutional symptom,Growth abnormality,Neoplasm
+SMARCC2,0,0,1,1,1,0,0,0,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,1,0
+DDX3X,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,1,1,0,1,0,0,0,1,0
+DYRK1A,0,0,0,1,1,0,0,0,0,1,1,0,1,0,1,0,1,1,0,1,0,0,0,1,0
+PHIP,0,0,0,1,1,0,0,0,0,0,1,0,1,1,0,1,1,1,0,1,0,0,0,1,0
+TTN,1,1,1,1,1,1,0,0,1,0,1,0,1,0,1,1,1,1,1,1,0,1,0,1,0
+NFIB,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0
+CNOT3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KMT2A,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,0
+SMARCA4,0,0,1,1,1,0,0,0,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,1,0
+KCNQ2,0,0,0,0,0,1,0,0,1,1,0,0,1,0,0,1,1,1,1,0,0,0,1,0,0
+DDX3X,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,1,1,0,1,0,0,0,1,0

@@ -1,0 +1,3543 @@
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90"))
+p
+p+scale_fill_manual(values=c("pink", "red3")
+p
+p+scale_fill_manual(values=c("pink", "red3"))
+p
+p+scale_fill_manual(values=c("pink", "red3"))+#
+  theme_ipsum() +#
+  theme_bw()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  scale_fill_manual(values=c("pink", "red3"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90"))
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  scale_fill_manual(values=c("pink", "red3"))+#
+  theme_ipsum() +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +theme_bw()
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  scale_fill_manual(values=c("pink", "red3"))+#
+  theme_ipsum() +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90"))
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  scale_fill_manual(values=c("pink", "red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +theme_ipsum() +theme_bw()+
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  scale_fill_manual(values=c("pink", "red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +theme_ipsum() +theme_bw()
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+df.m<-melt(df, id.vars="X", measure.vars=c("Synapse_Fold", "Syndromic_Fold"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Synapse_Fold", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Syndromic_Fold") %>% #
+  arrange(value)#
+the_order <- temp_df$X#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = X, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-2, 2, 1), labels = abs(seq(-2, 2, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Phenotypes", y = "Fold Enrichment") +#
+  scale_fill_manual(values=c("pink", "red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(Phenotypes, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Brain Regions", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))
+df
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Brain Regions", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Brain Regions", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Brain Regions", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.5)#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Brain Regions", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.5)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Brain Regions", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.25)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.5)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.25)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("pink3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.25)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("pink3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("skyblue"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("coral3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("coral3"))+ylim(0,1.25)#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("coral3"))+ylim(0,1.25)+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("coral3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("coral3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,1.5)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Synapse_Fold), y = Synapse_Fold)) +#
+  geom_col( aes(fill = 'synapse_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("coral3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,1.5)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_syndromic_phe_enrichment.csv")#
+#
+# Horizontal bar plots, #
+# change fill color by groups and add text labels#
+ggplot(df, aes(x = reorder(X, Syndromic_Fold), y = Syndromic_Fold)) +#
+  geom_col( aes(fill = 'syndromic_corr')) + #
+  labs(x = "Human Systems", y = "Fold Enrichment") +#
+    coord_flip()+#
+  scale_fill_manual(values=c("red3"))+#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +ylim(0,2.25)+#
+        #theme_ipsum() +theme_bw()+#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/syndromic_nonsyndromic_pheno_R.csv")#
+#
+# Change color by groups#
+dp <- ggplot(df, aes(x=Group, y=Phe_No, fill=Group)) + #
+  geom_violin(trim=FALSE)+#
+  geom_boxplot(width=0.1, fill="white")+#
+  labs(x="Autism Genes", y = "Number of Phenotypes \n (Excluding Nervous System)")#
+dp + theme_classic()+#
+scale_fill_manual(values=c("pink", "coral"))+scale_y_log10()+theme_bw()+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+#
+    theme(legend.position = "none")
+library(dplyr)#
+library(tidyr)#
+library(ggplot2)#
+library(ggthemes)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_phenotype_heatmap.csv')#
+#
+df.tidy<- df %>% tidyr::gather(sample, phenotypes, 2:27)#
+#
+df.tidy$phenotypes<- factor(df.tidy$phenotypes)#
+#
+## use a white border of size 0.5 unit to separate the tiles#
+gg<- ggplot(df.tidy, aes(x=sample, y=X, fill=phenotypes)) + geom_tile(color="white", size=0.5)#
+#
+gg<- gg + scale_fill_brewer(palette = "Set1", direction = -1)#
+gg<- gg + coord_equal()#
+## add title#
+#
+gg<- gg + labs(x=NULL, y=NULL)#
+#
+library(ggthemes)#
+##starting with a base theme of theme_tufte() from the ggthemes package. It removes alot of chart junk without having to do it manually.#
+gg <- gg + theme_tufte(base_family="Helvetica")#
+#
+#We don’t want any tick marks on the axes and I want the text to be slightly smaller than the default.#
+#
+gg <- gg + theme(axis.ticks=element_blank())#
+gg <- gg + theme(axis.text.x=element_text(angle = 45, hjust = 1))#
+gg#
+#
+gg <- ggplot(df.tidy, aes(x=sample, y=X, fill=phenotypes)) + geom_tile(color="white", size=0.5) +#
+         coord_equal() +#
+        labs(x=NULL, y=NULL) +#
+        theme_tufte(base_family="Helvetica") +#
+        scale_fill_manual(name= "Phenotypes", labels= c("Absent", 'Present'), values = c("gray", "red")) +#
+        theme(axis.ticks=element_blank()) + #
+        theme(axis.text.x=element_text(angle = 45, hjust = 1))+#
+        theme(text = element_text(size=25))
+library(dplyr)#
+library(tidyr)#
+library(ggplot2)#
+library(ggthemes)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_phenotype_heatmap.csv')#
+#
+df.tidy<- df %>% tidyr::gather(sample, phenotypes, 2:26)#
+#
+df.tidy$phenotypes<- factor(df.tidy$phenotypes)#
+#
+## use a white border of size 0.5 unit to separate the tiles#
+gg<- ggplot(df.tidy, aes(x=sample, y=X, fill=phenotypes)) + geom_tile(color="white", size=0.5)#
+#
+gg<- gg + scale_fill_brewer(palette = "Set1", direction = -1)#
+gg<- gg + coord_equal()#
+## add title#
+#
+gg<- gg + labs(x=NULL, y=NULL)#
+#
+library(ggthemes)#
+##starting with a base theme of theme_tufte() from the ggthemes package. It removes alot of chart junk without having to do it manually.#
+gg <- gg + theme_tufte(base_family="Helvetica")#
+#
+#We don’t want any tick marks on the axes and I want the text to be slightly smaller than the default.#
+#
+gg <- gg + theme(axis.ticks=element_blank())#
+gg <- gg + theme(axis.text.x=element_text(angle = 45, hjust = 1))#
+gg#
+#
+gg <- ggplot(df.tidy, aes(x=sample, y=X, fill=phenotypes)) + geom_tile(color="white", size=0.5) +#
+         coord_equal() +#
+        labs(x=NULL, y=NULL) +#
+        theme_tufte(base_family="Helvetica") +#
+        scale_fill_manual(name= "Phenotypes", labels= c("Absent", 'Present'), values = c("gray", "red")) +#
+        theme(axis.ticks=element_blank()) + #
+        theme(axis.text.x=element_text(angle = 45, hjust = 1))+#
+        theme(text = element_text(size=25))
+head(df)
+drops <- c("Neoplasm)
+df[ , !(names(df) %in% drops)]
+q
+exit
+end
+p
+q
+head(df)
+df
+""
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_validated_db.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nonbrain_pred_genes_above_4.67.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "CC",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+#
+dotplot(ego2, showCategory=15)
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_validated_db.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nonbrain_pred_genes_above_4.67.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+#
+dotplot(ego2, showCategory=15)
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+library(DOSE)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_only_val.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+dotplot(ego2, showCategory=15)+theme(text = element_text(size=20))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667  ))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="#69b3a2", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+#June 13, 2020#
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="maroon", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="maroon", size=PValue) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred", size=10) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred", size=10) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="coral") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="red") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, fill="red") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point( fill="red") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    #geom_point( fill="red") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="red") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred", size=10) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred", size=10) +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="darkred") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="pink") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="orang") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="orange") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="maroon") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    #geom_line( color="grey", size=2) +#
+    geom_point(shape=21, color="black", fill="maroon") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=2) +#
+    geom_point(shape=21, color="black", fill="maroon") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="maroon") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="red") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="red1") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="red2") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="red3") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 13)+ylim(0, 10)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="red3") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    xlim(0, 10)+ylim(0, 7)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(hrbrthemes)#
+#
+# Load dataset from github#
+df <- data.frame(Number_of_Consensus_Sources=c(0, 1, 2, 3, 4, 5, 6, 7, 8), Fold_Enrichment=c(0.37641154328732745, 0.9552238805970149, 1.3944954128440368,2.0428571428571427, 3.2448979591836733, 3.888888888888889, 5.230769230769231, 6.555555555555555, 6.666666666666667), PValue=c(0.9999999999712506, 0.7822656332319116, 7.198742237365059e-06, 3.993568924425307e-18, 2.233431381273741e-46, 1.382067671628916e-51, 2.3457102490953157e-71, 7.969174521432951e-38, 1.3100118156995085e-14))#
+#
+# Plot#
+df %>%#
+  ggplot( aes(x=Number_of_Consensus_Sources, y=Fold_Enrichment, size=-log(PValue))) +#
+    geom_line( color="grey", size=1) +#
+    geom_point(shape=21, color="black", fill="red3") +#
+    theme_ipsum() +#
+    theme_bw()+#
+    #xlim(0, 10)+ylim(0, 7)+#
+    labs(y= "SynSig Fold Enrichment", x = "Number of Consensus Sources")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_validated_db.csv')#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_proteomics_new_syndromic.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/pred_genes_above_4.7.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+#
+dotplot(ego2, showCategory=15)
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_validated_db.csv')#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_proteomics_new_syndromic.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/pred_genes_above_4.7.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+#
+dotplot(ego2, showCategory=20)
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_validated_db.csv')#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/nb_proteomics_new_syndromic.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/pred_genes_above_4.7.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+#
+dotplot(ego2, showCategory=15)
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+library(DOSE)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/adult/new_adult_pred.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/new_adult_pred.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+dotplot(ego2, showCategory=15)+theme(text = element_text(size=20))
+x
+"x"
+library(clusterProfiler)#
+library(enrichplot)#
+library(ggplot2)#
+library(org.Hs.eg.db)#
+library(DOSE)#
+#
+#df <- read.csv('/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/adult/new_adult_pred.csv')#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/new_adult_pred.csv')#
+ego2 <- enrichGO(gene         = df$genes,#
+                OrgDb         = org.Hs.eg.db,#
+                keyType       = 'SYMBOL',#
+                ont           = "BP",#
+                pAdjustMethod = "BH",#
+                pvalueCutoff  = 0.01,#
+                qvalueCutoff  = 0.05)#
+head(summary(ego2))#
+dotplot(ego2, orderBy="count", showCategory=15)+theme(text = element_text(size=20))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))+#
+    scale_y_continuous(breaks = seq(0, 3, len = 1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))+#
+    scale_y_continuous(breaks = seq(0, 3, by = 1))
+p + scale_y_discrete(breaks=c("0","1","2", "3"))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))#
+#
+p + scale_y_discrete(breaks=c("0","1","2", "3"))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))#
+#
+p + scale_y_continuous(limits=c(0, 3))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+scale_y_discrete(breaks=c("0","1","2", "3"))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3"))#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3"))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+)
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))+
+p + scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))+
+done
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+p + scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))
+p + scale_y_continuous(expand = c(0, 0))
+library(ggplot2)#
+#
+df2 <- data.frame(Groups=rep(c("GO Synapse", "SynGO", "SynSig"), each=3),#
+                Model=rep(c("Fetal Brain", "NGN2-Derived", "Overlap: Fetal/NGN2"),3),#
+                Fold_Enrichment=c(1.69, 1.21, 1.80, 2.34, 1.53, 2.53, 2.65, 1.76,2.95))#
+head(df2)#
+#
+p <- ggplot(data=df2, aes(x=Model, y=Fold_Enrichment, fill=Groups)) +#
+geom_bar(stat="identity", position=position_dodge())+#
+scale_fill_brewer(palette="Reds", name="Synapse Model", labels = c("GO Synapse", "SynGO", "SynSig"))+#
+  theme_minimal()#
+#
+p+labs(x="Proteomics Screens", y="Fold Enrichment")+theme(axis.ticks.y=element_blank()+scale_y_discrete(breaks=c("0", "1", "2", "3")))+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA))+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,50)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,50)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,50)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+xlim(0, 15000)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)++xlim(0, 15000)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_rect(colour = "black", fill=NA), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    #theme(panel.border = element_rect(colour = "black", fill=NA), axis.line = element_line(colour = "black"))
+library(ggplot2)#
+library(dplyr)#
+library(tidyverse)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/fetal_specific_trajectory.csv")#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/fetal_specific_trajectory.csv")#
+df %>%#
+  ggplot( aes(x=Age, y=mean)) +#
+    geom_line( color="grey") +#
+    geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+#
+# Add the regression line#
+ggplot(df, aes(x=Age, y=mean)) + #
+  geom_point()+#
+  geom_smooth(color="black")+#
+  geom_point(shape=21, color="black", fill="brown3", size=6) +#
+    theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+new <- select(df, Age, mean)#
+#
+names(new)[names(new) == "mean"] <- "Fetal"#
+#
+#df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/NetworkClass/Entry_Ontology/synapse_10/validate_new_exp/fetal/adult_specific_trajectory.csv")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/adult_specific_trajectory.csv")#
+adult_mean <- select(df, mean)#
+final <- cbind(new, adult_mean)#
+names(final)[names(final) == "mean"] <- "Adult"#
+#
+final.m<-melt(final, id.vars="Age", measure.vars=c("Fetal", "Adult"))#
+#
+names(final.m)[names(final.m) == "variable"] <- "Group"#
+#
+ggplot(final.m, aes(x=Age, y=value, color=Group)) +#
+  geom_point()+#
+  geom_smooth(aes(fill=Group))+#
+  geom_point(shape=21, color="black", size=6, aes(fill=Group))+#
+  scale_color_manual(values=c('red', 'gray'))+#
+  scale_fill_manual(values=c('red', 'gray'))+#
+  theme_ipsum() +#
+    theme_bw()+scale_x_log10()+ylim(0,65)+#
+    labs(y= "Brain Expression (TPM)", x = "Age (Days)")+#
+    theme(text = element_text(size=25))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")
+df
+summary(df)
+apply(df, 2, sd, na.rm = TRUE)
+log(df)
+df
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)
+new <- log(new)
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)#
+#
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black")
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black")
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+new <- log(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)#
+#
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black")
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+new <- log(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)#
+#
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#
+par(mar = c(7, 7, 5, 5))#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black")
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+new <- log(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)#
+#
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#
+par(mar = c(7, 7, 7, 7))#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black")
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+new <- log(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)#
+#
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#
+par(mar = c(7, 7, 7, 7))#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black", mar=c(7,7,7,7))
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+new <- log(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)#
+#
+#Find the contribution from each feature#
+feature_var<- t(var$contrib)#
+#Find the contribution from each PC#
+pc_var <- res.pca$eig[,c("percentage of variance")]#
+#convert the PC variance vector to decimals#
+pc_var <- pc_var * 0.01#
+#
+#multiply the PC contribution with Feature contribution#
+feature_pc <- feature_var* pc_var#
+feat_pc_t <- t(feature_pc)#
+feat_pc_t#
+#change the col and row names#
+#
+colnames(feat_pc_t) <- c("PC1", "PC2", "PC3", "PC4", "PC5", 'PC6', 'PC7', 'PC8', 'PC9')#
+rownames(feat_pc_t) <- c("Phos Site No", 'Domain No', 'Protein Mass', 'Transcript Length', 'Gene Length', 'Exon No', 'CDS Length', 'Isoform No', 'Amino Acid Length')#
+#
+new<- feat_pc_t[,c("PC1","PC2","PC3", "PC4")]#
+#
+par(mar = c(7, 7, 5, 5))#
+#plot the normalized contribution of each feature for each PC:#
+corrplot(new, is.corr=FALSE, method="circle", tl.col="black")
+rm(list = ls())#
+#
+library(ggplot2)#
+library(dplyr)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Ontology/Analyze_Synapse_Features/compare_train_synch_features.csv")#
+#
+df.m<-melt(df, id.vars="Features", measure.vars=c("Training_Ratio", "Exp_Ratio"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Training_Ratio", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Exp_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Features#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = Features, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-3, 3, 1), labels = abs(seq(-3, 3, 1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Features", y = "Fold Change") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  scale_fill_manual(values=c("gray", "royalblue"),#
+                    name="",#
+                    breaks=c("Training_Ratio", "Exp_Ratio"),#
+                    labels=c("Training", "Synch"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+ggplot(bp_plot)
+p <- ggplot(mtcars, aes(wt, mpg))#
+p + geom_point()
+mtcars
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")
+df
+p <- ggplot(df, aes(Gene_Ratio, Significance))#
+p + geom_point()
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity")#
+p#
+# Horizontal bar plot#
+p + coord_flip()
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p#
+# Horizontal bar plot#
+p + coord_flip()
+p + scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p <- p + expand_limits(x = 0, y = 0)#
+#
+p#
+# Horizontal bar plot#
+p + coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p <- p + expand_limits(x = 0, y = 0)#
+#
+p + scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))#
+#
+# Horizontal bar plot#
+p + coord_flip()#
+#
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p <- p + expand_limits(x = 0, y = 0)#
+#
+p + scale_x_discrete(expand = c(0, 0)) + scale_y_discrete(expand = c(0, 0))#
+#
+# Horizontal bar plot#
+p + coord_flip()#
+#
+p
+rm(list = ls())#
+#
+library(ggplot2)#
+library(dplyr)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p <- p + expand_limits(x = 0, y = 0)#
+#
+p + scale_x_discrete(expand = c(0, 0)) + scale_y_discrete(expand = c(0, 0))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p <- p + expand_limits(x = 0, y = 0)#
+#
+p + scale_x_discrete(expand = c(0, 0), limits = c(0,NA)) + #
+  scale_y_discrete(expand = c(0, 0), limits = c(0, NA))
+rm(list = ls())#
+#
+library(ggplot2)#
+library(dplyr)#
+library(reshape2)#
+library(hrbrthemes)#
+#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p <- p + expand_limits(x = 0, y = 0)#
+#
+p + scale_x_discrete(expand = c(0, 0)) + scale_y_discrete(expand = c(0, 0))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p # not what you are looking for#
+p + #
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p + scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, NA))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_point(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio)) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(x=Functions, y=Gene_Ratio), aes(reorder(Gene_Ratio)#
+) +#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(GeneRatio))+#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance))#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance)+scale_fill_continuous(type = "viridis")#
+)#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance)+scale_fill_continuous(type = "reds")#
+)#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance)+scale_fill_manual(values = c("red")#
+)#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance))+scale_fill_distiller(palette = "RdYlGn")#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance))+scale_fill_distiller(palette = "Reds")#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance))+scale_fill_distiller(palette = "Reds")#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p<- p+coord_flip()#
+#
+p+labs(x="Gene_Ratio", y="Function")+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance))+scale_fill_distiller(palette = "Reds")#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p<- p+coord_flip()#
+#
+p+labs(x="Gene_Ratio", y="Function")+theme_bw()+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df#
+#
+p<-ggplot(data=df, aes(reorder(Functions, Gene_Ratio), Gene_Ratio))+#
+  geom_bar(stat="identity", aes(fill = Significance))+scale_fill_distiller(palette = "Reds")#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p<- p+coord_flip()#
+#
+p+labs(x="Function", y="Gene Ratio in SynSig")+theme_bw()+#
+theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+    theme(axis.text.x=element_text(angle=30, hjust=1))
+library(dplyr)#
+library(tidyr)#
+library(ggplot2)#
+library(ggthemes)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/nonbrain_big_genes_pool_pipeline/synapse_phenotype_heatmap.csv')#
+keeps <- c("X", "Abnormality.of.the.endocrine.system","Abnormality.of.the.skeletal.system", "Abnormality.of.the.integument", 'Abnormality.of.the.cardiovascular.system', "Abnormality.of.the.musculature", "Abnormality.of.the.digestive.system", "Abnormality.of.the.respiratory.system", 'Abnormality.of.the.genitourinary.system', 'Abnormality.of.the.immune.system' )#
+#
+df<- df[keeps]#
+df<-df[-c(7),]#
+#
+df.tidy<- df %>% tidyr::gather(sample, phenotypes, 2:9)#
+#
+df.tidy$phenotypes<- factor(df.tidy$phenotypes)#
+#
+## use a white border of size 0.5 unit to separate the tiles#
+gg<- ggplot(df.tidy, aes(x=sample, y=X, fill=phenotypes)) + geom_tile(color="white", size=0.5)#
+#
+gg<- gg + scale_fill_brewer(palette = "Set1", direction = -1)#
+gg<- gg + coord_equal()#
+## add title#
+#
+gg<- gg + labs(x=NULL, y=NULL)#
+#
+library(ggthemes)#
+##starting with a base theme of theme_tufte() from the ggthemes package. It removes alot of chart junk without having to do it manually.#
+gg <- gg + theme_tufte(base_family="Helvetica")#
+#
+#We don’t want any tick marks on the axes and I want the text to be slightly smaller than the default.#
+#
+gg <- gg + theme(axis.ticks=element_blank())#
+gg <- gg + theme(axis.text.x=element_text(angle = 45, hjust = 1))#
+gg#
+#
+gg <- ggplot(df.tidy, aes(x=sample, y=X, fill=phenotypes)) + geom_tile(color="white", size=0.5) +#
+         coord_equal() +#
+        labs(x=NULL, y=NULL) +#
+        theme_tufte(base_family="Helvetica") +#
+        scale_fill_manual(name= "Phenotypes", labels= c("Absent", 'Present'), values = c("gray", "red")) +#
+        theme(axis.ticks=element_blank()) + #
+        theme(axis.text.x=element_text(angle = 45, hjust = 1))+#
+        theme(text = element_text(size=25))
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Gene_Ratio", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Novel_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = Functions, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-1, 1, 0.2), labels = abs(seq(-1, 1, 0.2))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Functions", y = "Proportion of SynSig") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  scale_fill_manual(values=c("gray", "royalblue"),#
+                    name="",#
+                    breaks=c("Gene_Ratio", "Novel_Ratio"),#
+                    labels=c("Novel Genes", "SynSig"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Gene_Ratio", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Novel_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = Functions, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-1, 1, 0.2), labels = abs(seq(-1, 1, 0.2))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Functions", y = "Proportion of SynSig") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  scale_fill_manual(values=c("gray", "royalblue"),#
+                    name="",#
+                    breaks=c("Gene_Ratio", "Novel_Ratio"),#
+                    labels=c("SynSig", "Novel Genes"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Gene_Ratio", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Novel_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = Functions, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-1, 1, 0.2), labels = abs(seq(-1, 1, 0.2))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Functions", y = "Proportion of SynSig") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  scale_fill_manual(values=c("gray", "royalblue"),#
+                    name="",#
+                    breaks=c("Gene_Ratio", "Novel_Ratio"),#
+                    labels=c("SynSig", "Novel Genes"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Gene_Ratio", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Novel_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = Functions, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-1, 1, 0.2), labels = abs(seq(-1, 1, 0.2))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Functions", y = "Proportion of SynSig") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  scale_fill_manual(values=c("gray", "royalblue"),#
+                    name="",#
+                    breaks=c("Gene_Ratio", "Novel_Ratio"),#
+                    labels=c("All SynSig Genes", "Novel Genes in SynSig"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+# prepare data for plotting#
+plotting_df <-#
+  df.m %>% #
+  # a trick!#
+  mutate(value = if_else(variable == "Gene_Ratio", -value, value))#
+#
+## find the order#
+temp_df <-#
+  plotting_df %>% #
+  filter(variable == "Novel_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+# plot#
+p <- #
+  plotting_df %>% #
+  ggplot(aes(x = Functions, y = value, group = variable, fill = variable)) +#
+  geom_bar(stat = "identity", width = 0.75) +#
+  coord_flip() +#
+  scale_x_discrete(limits = the_order) +#
+  # another trick!#
+  scale_y_continuous(breaks = seq(-1, 1, 0.1), labels = abs(seq(-1, 1, 0.1))) +#
+  #labs(x = "Features", y = "Fold Change", title = "Genomic and Protein Features") +#
+  labs(x = "Functions", y = "Proportion of SynSig") +#
+  theme(legend.position = "bottom",#
+        legend.title = element_blank(),#
+        plot.title = element_text(hjust = 0.5),#
+        panel.background = element_rect(fill =  "grey90")) +#
+  # reverse the order of items in legend#
+  # guides(fill = guide_legend(reverse = TRUE)) +#
+  # change the default colors of bars#
+  scale_fill_manual(values=c("gray", "royalblue"),#
+                    name="",#
+                    breaks=c("Gene_Ratio", "Novel_Ratio"),#
+                    labels=c("All SynSig Genes", "Novel Genes in SynSig"))+#
+  theme_ipsum() +#
+  theme_bw()+#
+#
+  theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+  #theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))#
+print(p)
+# create a dataset#
+specie <- c(rep("sorgho" , 3) , rep("poacee" , 3) , rep("banana" , 3) , rep("triticum" , 3) )#
+condition <- rep(c("normal" , "stress" , "Nitrogen") , 4)#
+value <- abs(rnorm(12 , 0 , 15))#
+data <- data.frame(specie,condition,value)
+data
+# Stacked + percent#
+ggplot(data, aes(fill=condition, y=value, x=specie)) + #
+    geom_bar(position="fill", stat="identity")
+plotting_df
+# Stacked + percent#
+ggplot(plotting_df, aes(fill=variable, y=value, x=Functions)) + #
+    geom_bar(position="fill", stat="identity")
+temp_df
+df.m
+# Stacked + percent#
+ggplot(df.m, aes(fill=variable, y=value, x=Functions)) + #
+    geom_bar(position="fill", stat="identity")
+# Stacked + percent#
+ggplot(df.m, aes(fill=variable, y=value, x=Functions)) + #
+    geom_bar(position="identity", stat="identity")
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue")
+)
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue")+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+#
+p+coord_flip()
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue")+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())
+)
+p
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+#
+p+coord_flip()
+df.m
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Novel_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+scale_fill_manual(values=c("gray", "royalblue"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "royalblue"), labels=c("All SynSig Genes", "Novel Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "royalblue"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "coral"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "brown3"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "brown"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "red"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "pink"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "pink3"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/SynSig_enrichment_R.csv")#
+#
+df.m<-melt(df, id.vars="Functions", measure.vars=c("Gene_Ratio", "Novel_Ratio"))#
+#
+## find the order#
+temp_df <-#
+  df.m %>% #
+  filter(variable == "Gene_Ratio") %>% #
+  arrange(value)#
+the_order <- temp_df$Functions#
+#
+p <- ggplot(df.m, aes(fill=variable, y=value, x=Functions)) +  geom_bar(position="identity", stat="identity")+#
+labs(x = "Functions", y = "Proportion of SynSig") +#
+scale_fill_manual(values=c("gray", "darkred"), labels=c("SynSig Genes", "Novel Synapse Genes in SynSig"))+#
+theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank())+#
+  theme(panel.background=element_blank())#
+p<- p + expand_limits( y = 0)#
+#
+p <- p + scale_y_continuous(expand = c(0, 0), limits = c(0, 0.7))#
+#
+p+coord_flip()+scale_x_discrete(limits = the_order)
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/enrichment_adult_new_pred.csv')
+df
+head(df)
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/enrichment_adult_new_pred.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=negative_log10_of_adjusted_p_value))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/enrichment_adult_new_pred.csv')
+head(df)
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=negative_log10_of_adjusted_p_value))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+head(df)
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name, color="red", size=negative_log10_of_adjusted_p_value))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=-log10(Adjusted P)))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=-log10(Adjusted_P)))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=-log10(Adjusted_P_)))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=log_Adjusted_P))+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=log_Adjusted_P)+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')
+head(df)
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=log_Adjusted_P)+scale_size_area()+guides(color=FALSE)#
+#
+print(obj + labs(y="Sources", x = "Fold Enrichment")+theme_bw()+theme(text = element_text(size=25)))
+library(ggplot2)#
+#
+df <- read.csv('/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/update_enrichment/New_Adult_Pred_enrichment_R.csv')#
+#
+obj <- ggplot(df)+geom_point(aes(x=Gene_Ratio, y=term_name), color="red", size=log_Adjusted_P)+scale_size_area()+guides(color=FALSE)
+head(df)
+library("FactoMineR")#
+library("factoextra")#
+library(tidyverse)#
+library("corrplot")#
+df <- read.csv("/Users/karenmei/Documents/Synapse_Paper_Code/synapse_11/brain_RNA_big_gene_pool_pipeline/expanded_pca_R.csv")#
+#
+#make "Genes" column the index#
+rownames(df) <- df$Genes#
+#
+#remove the extra "Genes" column and the "target column"#
+new <- select (df, -c(Genes, target))#
+head(new)#
+#
+new <- log(new)#
+#
+#reduce the df into 9 orthogonal dimensions using PCA#
+res.pca <- PCA(new, scale.unit=TRUE, ncp=9, graph = FALSE)#
+#
+#get the eigenvalues#
+eig.val <- get_eigenvalue(res.pca)#
+#
+#plot the PC variances:#
+fviz_eig(res.pca, addlabels = TRUE)#
+var <- get_pca_var(res.pca)
+res.pca
+var
+fviz_eig(res.pca, addlabels = TRUE)
+scree <- fviz_eig(res.pca, addlabels = TRUE)
+scree
+scree+theme_bw()+#
+    theme(text = element_text(size=20))+#
+    theme(panel.border = element_rect(colour = "black", fill=NA), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
